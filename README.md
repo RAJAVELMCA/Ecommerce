@@ -1,5 +1,5 @@
 # ECOMMERCE
-![developer](https://img.shields.io/badge/Developed%20By%20%3A-Rajavel%20Kumar-red)
+![developer](https://img.shields.io/badge/Developed%20By%20%3A-Rajavel%20K-red)
 ---
 ## screenshots
 ### Admin Dashboard
