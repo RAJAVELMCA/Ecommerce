@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("{% static 'img/back4.webp' %}");
+
+  min-height: 650px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 400px;
+  padding: 18px;
+  background-color:rgb(235, 229, 229);
+  left: 530px; 
+  top: 50px;
+  border-radius: 20px;
+
+  
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #eb2f06;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  opacity: 0.9;
+  border-radius: 10px;
+  float: right;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+.h1{
+  text-align: center;
+}
+#myDIV {
+  width: 90%;
+  padding: 40px 5;
+  text-align: center;
+  background-color: gainsboro;
+  margin-top: 10px;
+}
+</style>
+<script type="text/javascript">
+  function redirect() 
+  {
+  if (document.getElementById('payments').checked) {
+          rate_value = document.getElementById('payments').value;
+          //alert(rate_value);
+          location.href="payment-success"
+  }
+}
+</script>
+</head>
+<body>
+
+
+<div class="bg-img">
+  <form class="container" action="javascript:redirect();">
+   
+     <h1 class="h1"> Cash On Delivery Payment</h1>
+  <input type="radio" onclick="document.getElementById('demo').style.display='block'" id="payments" value="payment-success" required>Cash on Delivery 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/cash.jpg' %}" height="50px" width="80px"></br><br><br>
+  <div id="demo" style="display: none;">
+  <p>Due to handling costs,a nominal fee of RS: 10 will be charged for orders placed using this option.
+    Avoid this fee by paying online now.
+  </p>
+</div><br><br>
+<center><button type="submit" class="btn" value="submit" id="submit">PAY NOW</button></center>
+</form>
+</div>
+</body>
+</html>

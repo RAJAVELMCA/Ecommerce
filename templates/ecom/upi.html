@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+<style>
+     *{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%,rgba(0, 0, 0, 0.5)50%),url("{% static 'img/back4.webp' %}");
+    background-position: center;
+    background-size: cover;
+    height: 109vh;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    
+}
+.form{
+    font-size: 30px;
+    align-items: center;
+    
+}
+div.raja{
+    
+    background-color:rgb(235, 229, 229);
+    width: 400px;
+    font-size: 18px;
+    border-radius: 20px;
+    border:1px solid rgba(255,255,255,0.3);
+    box-shadow: 2px 2px 15px
+    rgba(0,0,0,0.3);
+    color:#fff;
+    left: 550px;
+    position: absolute;
+    top: 30px;
+    text-align: left;
+   color: black;
+    
+}
+button#submit{
+    width: 200px;
+    padding: 7px;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: #ff2600d5;
+    color: rgb(243, 241, 241);
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+    align-items: center;
+ } 
+
+input#submit:hover{
+    background-color: #ed3131;
+ }
+ .radio{
+    width: 20px;
+    height: 18px;
+ }
+ 
+</style>
+
+<script type="text/javascript">
+    function redirect() 
+    {
+    if (document.getElementById('payments').checked) {
+            rate_value = document.getElementById('payments').value;
+            //alert(rate_value);
+            location.href="payment-success"
+    }
+    if (document.getElementById('payments1').checked) {
+            rate_value = document.getElementById('payments1').value;
+            //alert(rate_value);
+            location.href="payment-success"
+    }
+    if (document.getElementById('payments2').checked) {
+            rate_value = document.getElementById('payments2').value;
+            //alert(rate_value);
+            location.href="payment-success"
+    }
+    if (document.getElementById('payments3').checked) {
+            rate_value = document.getElementById('payments3').value;
+            //alert(rate_value);
+            location.href="payment-success"
+    }
+  }
+  </script>
+</head>
+<body>
+    <div class="main">
+        <div class="raja">
+    <h2><center><br>UPI Payments</center></h2><br><br>
+    <div class="name">
+    <form action="javascript:redirect();">
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" class="radio" name="gender" id="payments" value="payment-success">&nbsp;
+    <span id="male">Paytm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="{% static 'img/paytm.jpg' %}" width="40px" height="35px">
+    <br><br>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" class="radio" name="gender" id="payments1" value="payment-success">&nbsp;
+    <span id="male">PhonePe</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/wallet.jpg' %}" width="40px" height="20px">
+    
+    <br><br>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" class="radio" name="gender" id="payments2" value="payment-success">&nbsp;
+    <span id="male">Google Pay</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/gpay.jpg' %}" width="43px" height="22px">
+  
+    <br>
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" class="radio" name="gender" id="payments3" value="payment-success">&nbsp;
+    <span id="male">Your UPI ID</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{% static 'img/upi.jpg' %}" width="43px" height="22px">
+  
+    <br>
+    <br><br>
+   
+    <center><button type="submit" value="submit" id="submit">PAY NOW</button></center>
+    </form>
+</div> </div></div>
+</body>
+</html>
